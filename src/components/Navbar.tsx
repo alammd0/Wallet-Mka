@@ -3,7 +3,7 @@ import { RiLightbulbFlashLine, RiLightbulbFlashFill } from "react-icons/ri";
 import { useEffect, useState } from "react";
 
 export function Navbar() {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState("dark");
 
   useEffect(() => {
     document.body.setAttribute("data-theme", theme);
@@ -11,8 +11,8 @@ export function Navbar() {
 
   function toggleTheme() {
     setTheme((prevTheme) => {
-      if (prevTheme === "light") return "dark";
-      return "light";
+      if (prevTheme === "dark") return "light";
+      return "dark";
     });
   }
 
