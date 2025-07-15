@@ -1,69 +1,47 @@
-# React + TypeScript + Vite
+# Wallet Mka: My First Web3 Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project, "Wallet Mka," is my first venture into the world of Web3 development. It's a cryptocurrency wallet generator built to learn and experiment with blockchain technologies, specifically Solana and Ethereum.
 
-Currently, two official plugins are available:
+The application allows for the generation of new wallets, including a secret mnemonic phrase and the corresponding public and private keys, all handled securely on the client-side.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Key Learnings & Technologies Used
 
-## Expanding the ESLint configuration
+This project was an opportunity to learn and implement the following:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+*   **React & TypeScript:** For building a modern, type-safe user interface.
+*   **Vite:** As a fast and efficient build tool.
+*   **@solana/web3.js & ethers:** For interacting with the Solana and Ethereum blockchains.
+*   **bip39 & ed25519-hd-key:** Understanding and implementing mnemonic phrase generation and hierarchical deterministic wallets.
+*   **Client-Side Security:** Ensuring that sensitive data like private keys and mnemonic phrases are never sent to a server and are handled only within the user's browser.
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Features
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- **Multi-Chain Support:** Generate wallets for both Solana and Ethereum.
+- **Secure Client-Side Generation:** All keys are generated and managed locally in your browser. Nothing is ever transmitted over the network.
+- **User-Friendly Interface:** A clean and intuitive interface for generating wallets.
+- **Dark Mode:** A sleek dark mode for comfortable viewing.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Getting Started
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+To run the project locally:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1.  **Install the dependencies:**
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+    ```bash
+    npm install
+    ```
+
+2.  **Run the development server:**
+
+    ```bash
+    npm run dev
+    ```
+
+3.  Open your browser and navigate to the local address provided by Vite (usually `http://localhost:5173`) to use the application.
+
+## How to Use
+
+1.  **Select a blockchain:** Choose between Solana and Ethereum on the main screen.
+2.  **Generate a wallet:** Click the "Create Wallet" button.
+3.  **Save your secret phrase:** Your 12-word secret phrase will be displayed. **It is crucial to save this phrase in a secure offline location.** This phrase is the only way to recover your wallet.
+4.  **View your keys:** Your public and private keys will be displayed for the newly created wallet.
