@@ -1,18 +1,25 @@
 import { IntroCompontent } from "./components/IntroCompontent";
 import { Navbar } from "./components/Navbar";
+import Footer from "./components/Footer";
 
 function App() {
   return (
-    <>
-      <div className="dark:bg-gray-800 bg-gray-100 min-h-screen pt-8 pb-8 dark">
+    <div className="flex flex-col min-h-screen bg-gray-100  dark:bg-gray-800">
+      {/* NAVBAR */}
+      <header className="pt-10">
         <Navbar />
+      </header>
 
-        <div>
-          <IntroCompontent />
-        </div>
+      {/* MAIN CONTENT: grows to fill available space */}
+      <main className="flex-grow pt-8 pb-8">
+        <IntroCompontent />
+      </main>
 
-      </div>
-    </>
+      {/* FOOTER: stays at bottom */}
+      <footer>
+        <Footer />
+      </footer>
+    </div>
   );
 }
 
